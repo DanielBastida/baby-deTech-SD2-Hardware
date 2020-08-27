@@ -1,0 +1,1 @@
+Use the nrfConnect app on Android/IOS to read data from ESP32
