@@ -68,16 +68,22 @@ void setup() {
   //device address, min connection Interval*1.25ms max connection Interval*1.25ms, latency, timeout*10ms
   pServer->updateConnParams(*myAddress.getNative(),0x1000,0x1000,0,1000);
   //begin dht temperature sensor
+  
   dht.begin();
 }
 
 void loop() {
   float humidity = dht.readHumidity();
   float temperatureC = dht.readTemperature();
-  float heatIndexVal = dht.computeHeatIndex(temperatureC,humidity, 0);
-  int heatIndexInt = (int)(temperatureC);
-  heatIndex.setValue(heatIndexInt);
-  heatIndex.notify();
+  if (isnan(humidity) || isnan(temperatureC)) {
+    Serial.println("Failed to read from DHT sensor!");
+  }
+  else{
+    float heatIndexVal = dht.computeHeatIndex(temperatureC,humidity, 0);
+    int heatIndexInt = (int)(temperatureC);
+    heatIndex.setValue(heatIndexInt);
+    heatIndex.notify();
+  }
   delay(1000);
   
 }
