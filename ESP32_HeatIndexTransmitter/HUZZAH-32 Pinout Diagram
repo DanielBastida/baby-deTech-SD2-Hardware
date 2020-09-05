@@ -1,0 +1,6 @@
+https://docs.google.com/spreadsheets/d/1O7qtk9F5jyWe82Yj3s766kuApjdnLXlfnJiUt8o7gCY/edit#gid=0
+
+Feel free to edit the diagram to make it more readable, add relevant information, or correct mistakes.
+
+As stated in the tutorial Alexander linked, we need to connect the DHT22 to Huzzah's pin that maps to GPIO #4.
+This is the A5 pin for the Huzzah-32. On the bottom of the board, this pin reads A5/4; A5 on the top. 
