@@ -1,0 +1,5 @@
+These a few examples of using FSRs with an Arduino chip instead of an ESP32:
+https://www.makerguides.com/fsr-arduino-tutorial/
+
+All I did to edit the code was to select pin 13 (GPIO #13/A12) on the HUZZAH board. Otherwise, the circuit is the same.
+I also editted the code to display the voltage read by the board so it's easier to know what the pin is reading than having to base it off of the ADCs quantized bit number.
